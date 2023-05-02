@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script configure SSH configuration file as we deem fit
+PasswordAuthentication no
+IdentityFile ~/.ssh/school
