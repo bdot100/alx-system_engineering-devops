@@ -2,9 +2,10 @@
 # this script transfers file from client to server
 
 if [ "$#" -lt 3 ]; then
-	echo "Wrong Command, The right usage is: ./filename PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
+	echo "Wrong Command, The right usage is: ./filename PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	exit;
 elif [ "$#" -lt 4 ]; then
 	scp "$1" "$3@$2":~/
 else
-	scp -i "$4" "$1" "$3@$2":~/
+	scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i "$4" "$1" "$3"@"$2":~/
 fi
