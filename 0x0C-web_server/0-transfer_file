@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# this script transfers file from client to server
 
 if [ "$#" -lt 3 ]; then
 	echo "Wrong Command, The right usage is: ./filename PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
