@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installs nginx on ubuntu server with redirection
+
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+line="\\\trewrite ^/redirect_me http://crowline.tech permanent;"
+sudo sed -i "26i $line" /etc/nginx/sites-available/default
+sudo service nginx restart
