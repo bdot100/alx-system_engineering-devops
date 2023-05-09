@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#This script installs load balancer,
+#Configure it's traffic to web-01 and web-02
+#Distribute requests using roundrobin algorithm
+#Make sure that HAproxy can be managed via an init script
+
+sudo apt-get update -y
+sudo apt-get install haproxy -y
+
+echo "frontend http_front
+        bind *:80
+        mode http
+        default_backend http_back
+
+backend http_back
+    mode http
+    balance roundrobin
+    server 183995-web-01 35.174.204.79 check
+    server 183995-web-02 34.227.91.64 check
+" >> /etc/haproxy/haproxy.cfg
+sudo service haproxy start
