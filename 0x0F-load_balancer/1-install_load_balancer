@@ -15,7 +15,7 @@ echo "frontend http_front
 backend http_back
     mode http
     balance roundrobin
-    server 183995-web-01 35.174.204.79 check
-    server 183995-web-02 34.227.91.64 check
+    server web-01 35.174.204.79 check
+    server web-02 34.227.91.64 check
 " >> /etc/haproxy/haproxy.cfg
 sudo service haproxy start
