@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# This script connects to my server using private key
-ssh -i ~/.ssh/school ubuntu@100.26.227.175
+# This script connects to my alx server
+ssh -i ~/.ssh/school ubuntu@35.174.204.79
