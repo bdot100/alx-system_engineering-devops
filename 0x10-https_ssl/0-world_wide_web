@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script displays information about our domain and subdomains
+
+
+domain_name=$1
+
+if [ "$#" -eq 2 ]; then
+    subdomain=$2
+else
+    subdomain=("www" "lb-01" "web-01" "web-02")
+fi
+
+for sub in "${subdomain[@]}"; do
+    echo -n "The subdomain $sub"
+    dig "$sub.$domain_name" | grep -A1 'ANSWER SECTION:' | tail -n -1 | awk '{ print " is a " $4 " record and points to " $5}'
+done
