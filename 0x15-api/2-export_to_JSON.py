@@ -27,4 +27,3 @@ if __name__ == '__main__':
     jsonobj[userId] = taskslist
     with open("{}.json".format(userId), 'w') as ajsonfile:
         json.dump(jsonobj, ajsonfile)
-

@@ -17,4 +17,3 @@ if __name__ == '__main__':
         for task in todo:
             csvwriter.writerow([userId, name.get('username'),
                                 task.get('completed'), task.get('title')])
-

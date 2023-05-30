@@ -28,4 +28,3 @@ if __name__ == '__main__':
         id_dict.get(emp_id).append(mydict)
     with open("todo_all_employees.json", 'w') as ajsonfile:
         json.dump(id_dict, ajsonfile)
-
