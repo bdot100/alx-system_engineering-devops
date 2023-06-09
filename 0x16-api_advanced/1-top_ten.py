@@ -6,6 +6,7 @@ first 10 hot posts listed for a given subreddit.
 import json
 from requests import get
 
+
 def top_ten(subreddit):
     """
     queries the Reddit API and prints the titles of the
@@ -18,7 +19,6 @@ def top_ten(subreddit):
     user_agent = {'User-agent': 'Chrome/113.0.0.0'}
     params = {'limit': 10}
     url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
-
     response = get(url, headers=user_agent, params=params)
     results = response.json()
 
