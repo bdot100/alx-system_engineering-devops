@@ -21,8 +21,8 @@ def validate_hostname(api_key, app_key):
 
 
 # Datadog API key and application key
-api_key = "74a4f021878681fb73dcd43873685bdf"
-app_key = "66d3f41e93e893e9398d585dc6507783014ad906"
+api_key = ""
+app_key = ""
 
 # Call the function to validate the hostname
 validate_hostname(api_key, app_key)
